@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adeel's Resume - BSCS Student & Cyber Security Enthusiast</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-color: #334155;
+            --light-bg: #f8fafc;
+            --border-color: #e2e8f0;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background-color: #f1f5f9;
+            line-height: 1.6;
+        }
+
+        #main-container {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            width: 80%;
+            max-width: 1200px;
+            margin: 40px auto;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+            page-break-after: always;
+        }
+
+        #main-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        #header {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            font-size: 20px;
+            font-weight: 200;
+            letter-spacing: 1px;
+            font-family: 'Roboto Slab', serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
+        }
+
+        #profile-section {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: white;
+            padding: 40px;
+            position: relative;
+        }
+
+        #profile-section::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 5%;
+            width: 90%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+        }
+
+        #image-name {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-right: 30px;
+        }
+
+        #profile-image {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            margin-bottom: 25px;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            transition: var(--transition);
+        }
+
+        #profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        #image-name h2 {
+            color: var(--secondary-color);
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        #image-name p {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        #title-info {
+            width: 70%;
+            padding-left: 30px;
+            text-align: left;
+        }
+
+        #title-info h2 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            display: inline-block;
+            font-size: 22px;
+            font-weight: 600;
+            position: relative;
+        }
+
+        #title-info h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            border-radius: 3px;
+        }
+
+        #title-info p {
+            margin: 15px 0;
+            color: var(--text-color);
+            font-weight: 400;
+            font-size: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .contact-info p {
+            margin: 8px 0;
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info p::before {
+            content: '•';
+            color: var(--accent-color);
+            margin-right: 8px;
+            font-size: 18px;
+        }
+
+        #details-section {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 40px;
+        }
+
+        #experience {
+            width: 60%;
+            padding-right: 40px;
+        }
+
+        #experience h2, #education-certification h2 {
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+            padding-bottom: 8px;
+            font-size: 22px;
+            font-weight: 600;
+            position: relative;
+        }
+
+        #experience h2::after, #education-certification h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            border-radius: 3px;
+        }
+
+        .job, .education-item, .certification-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .job::before, .education-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-color);
+        }
+
+        .job h3, .education-item h3 {
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .job p, .education-item p {
+            color: #64748b;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .job ul, .skills-list {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .job li, .skills-list li {
+            margin-bottom: 8px;
+            color: var(--text-color);
+            font-size: 14px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .job li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .skill-category {
+            width: 50%;
+            margin-bottom: 25px;
+        }
+
+        .skill-category h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 17px;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+
+        .skill-category h3::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--accent-color);
+        }
+
+        #education-certification {
+            width: 40%;
+            padding-left: 30px;
+            border-left: 1px dashed var(--border-color);
+        }
+
+        .education-item p strong {
+            color: var(--primary-color);
+        }
+
+        .certification-item h3 {
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .certification-item p {
+            color: #64748b;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .page-break {
+            page-break-after: always;
+        }
+
+        .projects-section, .additional-section {
+            padding: 40px;
+        }
+
+        .projects-section h2, .additional-section h2 {
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+            font-size: 22px;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .projects-section h2::after, .additional-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            border-radius: 3px;
+        }
+
+        .project-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            transition: var(--transition);
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .project-item:hover {
+            transform: translateX(5px);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .project-item h3 {
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .project-item p {
+            color: #64748b;
+            margin-bottom: 12px;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .project-item ul {
+            margin-left: 20px;
+        }
+
+        .project-item li {
+            margin-bottom: 8px;
+            color: var(--text-color);
+            font-size: 14px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .project-item li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .additional-section ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .additional-section li {
+            margin-bottom: 10px;
+            color: var(--text-color);
+            font-size: 14px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .additional-section li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-color);
+        }
+
+        .references {
+            margin-top: 30px;
+        }
+
+        .references p {
+            margin-bottom: 15px;
+            color: var(--text-color);
+            font-size: 14px;
+            padding: 15px;
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .references strong {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .update-date {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .update-date p {
+            color: #64748b;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .update-date strong {
+            color: var(--secondary-color);
+        }
+
+        @media only screen and (max-width: 1024px) {
+            #main-container {
+                width: 90%;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            #main-container {
+                width: 95%;
+                margin: 20px auto;
+            }
+
+            #image-name, #title-info, #experience, #education-certification {
+                width: 100%;
+                padding: 15px;
+            }
+
+            #profile-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            #title-info h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            #image-name {
+                padding-bottom: 20px;
+                border-bottom: 1px dashed var(--border-color);
+                margin-bottom: 20px;
+            }
+
+            #education-certification {
+                border-left: none;
+                border-top: 1px dashed var(--border-color);
+                padding-top: 30px;
+                margin-top: 30px;
+            }
+
+            .contact-info {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .skill-category {
+                width: 100%;
+            }
+        }
+
+        @media print {
+            body {
+                background: none;
+            }
+            
+            #main-container {
+                box-shadow: none;
+                width: 100%;
+                margin: 0;
+            }
+            
+            .page-break {
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1 -->
+    <div id="main-container">
+        <div id="header">
+            <h1>CURRICULUM VITAE</h1>
+        </div>
+
+        <div id="profile-section">
+            <div id="image-name">
+                <img id="profile-image" src="avatar.jpeg" alt="Adeel's Profile Picture">
+                <h2>Adeel Ahmed</h2>
+                <p>BSCS Student</p>
+            </div>
+            <div id="title-info">
+                <h2>Cyber Security Enthusiast</h2>
+                <p>I am a passionate Computer Science student currently pursuing my Bachelor's degree with a strong interest in cyber security. Currently enrolled in a Cyber Security diploma program at NED University to enhance my knowledge and skills in information security.</p>
+                
+                <div class="contact-info">
+                    <p>+92 300 1234567</p>
+                    <p>adeel.bscs@email.com</p>
+                    <p>Karachi, Pakistan</p>
+                    <p>linkedin.com/in/adeel-bscs</p>
+                    <p>github.com/adeel-bscs</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="details-section">
+            <div id="experience">
+                <h2>Professional Experience</h2>
+                
+                <div class="job">
+                    <h3>IT Support Intern</h3>
+                    <p>Tech Solutions Karachi</p>
+                    <p>June 2023 - August 2023 (3 months)</p>
+                    <ul>
+                        <li>Provided technical support to employees, troubleshooting hardware and software issues</li>
+                        <li>Assisted in network maintenance and security monitoring</li>
+                        <li>Documented IT processes and created user guides for common technical issues</li>
+                        <li>Participated in security awareness training sessions for staff</li>
+                    </ul>
+                </div>
+                
+                <div class="job">
+                    <h3>Freelance Web Developer</h3>
+                    <p>Self-employed</p>
+                    <p>January 2022 - Present</p>
+                    <ul>
+                        <li>Developed and maintained websites for small businesses using HTML, CSS, and JavaScript</li>
+                        <li>Implemented basic security measures for client websites (SSL, secure authentication)</li>
+                        <li>Optimized website performance and conducted security audits</li>
+                        <li>Consulted clients on best security practices for their online presence</li>
+                    </ul>
+                </div>
+                
+                <h2 style="margin-top: 30px;">Skills & Expertise</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Technical Skills</h3>
+                        <ul class="skills-list">
+                            <li>HTML5, CSS3, JavaScript</li>
+                            <li>Python, Java, C++</li>
+                            <li>Network Fundamentals</li>
+                            <li>Cyber Security Basics</li>
+                            <li>Linux Administration</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Soft Skills</h3>
+                        <ul class="skills-list">
+                            <li>Problem Solving</li>
+                            <li>Team Collaboration</li>
+                            <li>Technical Documentation</li>
+                            <li>Time Management</li>
+                            <li>Continuous Learning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="education-certification">
+                <h2>Education</h2>
+                
+                <div class="education-item">
+                    <h3>Bachelor of Science in Computer Science</h3>
+                    <p>2021 - 2025 (Expected)</p>
+                    <p>University of Karachi</p>
+                    <p><strong>CGPA: 3.6/4.0</strong></p>
+                </div>
+                
+                <div class="education-item">
+                    <h3>Diploma in Cyber Security</h3>
+                    <p>2023 - 2024 (Ongoing)</p>
+                    <p>NED University of Engineering & Technology</p>
+                    <p><strong>Current Semester: 2nd</strong></p>
+                </div>
+                
+                <div class="education-item">
+                    <h3>Intermediate (Pre-Engineering)</h3>
+                    <p>2019 - 2021</p>
+                    <p>Govt. Degree College Karachi</p>
+                    <p><strong>Grade: A</strong></p>
+                </div>
+                
+                <h2 style="margin-top: 30px;">Certifications</h2>
+                
+                <div class="certification-item">
+                    <h3>Introduction to Cyber Security</h3>
+                    <p>2023</p>
+                    <p>Coursera (University of Maryland)</p>
+                </div>
+                
+                <div class="certification-item">
+                    <h3>Python for Everybody</h3>
+                    <p>2022</p>
+                    <p>University of Michigan (Coursera)</p>
+                </div>
+                
+                <div class="certification-item">
+                    <h3>Web Development Fundamentals</h3>
+                    <p>2021</p>
+                    <p>Udemy</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2 -->
+    <div id="main-container" class="page-break">
+        <div id="header">
+            <h1>ACADEMIC PROJECTS</h1>
+        </div>
+
+        <div class="projects-section">
+            <h2>University Projects</h2>
+            
+            <div class="project-item">
+                <h3>Network Security Monitoring Tool</h3>
+                <p>Python | Scapy | Linux</p>
+                <p>January 2024 - Present</p>
+                <ul>
+                    <li>Developing a network monitoring tool that analyzes packets and detects suspicious activities</li>
+                    <li>Implementing basic intrusion detection features and generating security alerts</li>
+                    <li>Creating a user-friendly dashboard to visualize network traffic patterns</li>
+                </ul>
+            </div>
+            
+            <div class="project-item">
+                <h3>Secure Student Portal</h3>
+                <p>HTML | CSS | JavaScript | PHP | MySQL</p>
+                <p>September 2023 - December 2023</p>
+                <ul>
+                    <li>Designed and implemented a secure student information system with role-based access control</li>
+                    <li>Implemented password hashing, CSRF protection, and input validation</li>
+                    <li>Created admin, faculty, and student interfaces with appropriate permissions</li>
+                    <li>Documented security measures and potential vulnerabilities</li>
+                </ul>
+            </div>
+            
+            <div class="project-item">
+                <h3>Data Structures Visualizer</h3>
+                <p>Java | JavaFX</p>
+                <p>March 2023 - June 2023</p>
+                <ul>
+                    <li>Created an interactive application to visualize common data structures and algorithms</li>
+                    <li>Implemented BST, Linked Lists, Sorting algorithms with step-by-step visualization</li>
+                    <li>Designed intuitive UI with controls for speed and algorithm selection</li>
+                </ul>
+            </div>
+            
+            <h2 style="margin-top: 40px;">Personal Projects</h2>
+            
+            <div class="project-item">
+                <h3>Password Manager Application</h3>
+                <p>Python | SQLite | Cryptography</p>
+                <p>July 2023 - Present</p>
+                <ul>
+                    <li>Developing a local password manager with AES-256 encryption</li>
+                    <li>Implementing secure master password authentication</li>
+                    <li>Adding features for password generation and strength analysis</li>
+                </ul>
+            </div>
+            
+            <div class="project-item">
+                <h3>Cybersecurity Blog</h3>
+                <p>WordPress | HTML | CSS</p>
+                <p>January 2023 - Present</p>
+                <ul>
+                    <li>Created and maintain a blog about cybersecurity fundamentals and best practices</li>
+                    <li>Write articles explaining security concepts for beginners</li>
+                    <li>Implement security measures like HTTPS, regular updates, and backups</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3 -->
+    <div id="main-container">
+        <div id="header">
+            <h1>ADDITIONAL INFORMATION</h1>
+        </div>
+
+        <div class="additional-section">
+            <h2>Academic Achievements</h2>
+            <ul>
+                <li>Dean's List for academic excellence (Fall 2022, Spring 2023)</li>
+                <li>Recipient of Merit Scholarship for outstanding performance in Computer Science</li>
+                <li>Won 2nd prize in University Hackathon for developing a secure file sharing prototype</li>
+                <li>Active participant in cybersecurity capture-the-flag (CTF) competitions</li>
+            </ul>
+            
+            <h2 style="margin-top: 30px;">Workshops & Training</h2>
+            <ul>
+                <li>Participated in "Ethical Hacking Fundamentals" workshop by Pakistan Information Security Association (2023)</li>
+                <li>Completed "Secure Coding Practices" training organized by IEEE Computer Society (2022)</li>
+                <li>Attended "Digital Forensics Basics" seminar at NED University (2023)</li>
+                <li>Regular participant in cybersecurity webinars and tech talks</li>
+            </ul>
+            
+            <h2 style="margin-top: 30px;">Extracurricular Activities</h2>
+            <ul>
+                <li>Member of University Computer Society</li>
+                <li>Active participant in cybersecurity club activities</li>
+                <li>Volunteer for organizing tech events and hackathons</li>
+                <li>Mentor for junior students in programming fundamentals</li>
+            </ul>
+            
+            <h2 style="margin-top: 30px;">Languages</h2>
+            <ul>
+                <li>Urdu (Native)</li>
+                <li>English (Fluent)</li>
+                <li>Sindhi (Basic)</li>
+            </ul>
+            
+            <h2 style="margin-top: 30px;">References</h2>
+            <div class="references">
+                <p><strong>Dr. Farah Khan</strong><br>
+                Assistant Professor, Computer Science Department<br>
+                University of Karachi<br>
+                farah.khan@university.edu<br>
+                +92 21 1234567</p>
+                
+                <p><strong>Mr. Ali Raza</strong><br>
+                Cyber Security Instructor<br>
+                NED University<br>
+                ali.raza@neduet.edu.pk<br>
+                +92 300 7654321</p>
+                
+                <p><strong>Ms. Sara Ahmed</strong><br>
+                IT Manager, Tech Solutions Karachi<br>
+                sara.ahmed@techsolutions.com<br>
+                +92 321 9876543</p>
+            </div>
+            
+            <div class="update-date">
+                <p><strong>Last Updated: July 2025</strong></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
